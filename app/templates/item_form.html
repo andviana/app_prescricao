@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bg-white shadow rounded-lg p-6 max-w-2xl mx-auto">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6 border-b pb-4">Novo Item do Catálogo</h2>
+
+    <form method="POST">
+        <div class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Descrição Completa</label>
+                <input type="text" name="descricao_completa" placeholder="Ex: DIPIRONA 1 AMP. + AD EV, 8/8 H, S.N." required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border focus:border-blue-500 focus:ring-blue-500">
+            </div>
+        </div>
+
+        <div class="mt-6 flex justify-end space-x-3">
+            <a href="{{ url_for('itens.listar_itens') }}" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50">Cancelar</a>
+            <button type="submit" class="bg-blue-600 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700">Salvar Item</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

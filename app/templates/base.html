@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Central - Prescrição</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.default.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+    </style>
+</head>
+<body class="text-gray-800 antialiased min-h-screen flex flex-col">
+    <!-- Navbar UX Clean -->
+    <nav class="bg-blue-800 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-4">
+                    <span class="font-bold text-xl tracking-tight">PrescriçãoDigital</span>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="{{ url_for('main.dashboard') }}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Dashboard</a>
+                            <a href="{{ url_for('pacientes.listar_pacientes') }}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Pacientes</a>
+                            <a href="{{ url_for('internacoes.nova_internacao') }}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Nova Internação</a>
+                            <a href="{{ url_for('itens.listar_itens') }}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Catálogo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="flex-grow max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 w-full">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="mb-4">
+            {% for message in messages %}
+              <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 shadow-sm mb-2 rounded" role="alert">
+                <p>{{ message }}</p>
+              </div>
+            {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 text-sm mt-auto">
+        &copy; 2026 Hospital Central. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
