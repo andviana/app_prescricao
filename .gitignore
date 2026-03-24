@@ -478,4 +478,6 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,jupyternotebooks,pydev,pycharm,pycharm+all,pycharm+iml,pythonvanilla,venv
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,jupyternotebooks,pydev,pycharm,pycharm+all,pycharm+iml,pythonvanilla,venvapp.db
+*.db
+instance/
