@@ -77,4 +77,13 @@ class PrescricaoItens(db.Model):
     # Salvamos apenas a descrição do item (sem referência ao catálogo)
     descricao_foto = db.Column(db.String(255), nullable=False)
 
+
     prescricao = db.relationship('Prescricao', back_populates='itens')
+
+class Configuracao(db.Model):
+    __tablename__ = 'configuracoes'
+
+    id = db.Column(db.Integer, primary_key=True)
+    nome_empresa = db.Column(db.String(255), nullable=False, default='Prefeitura Municipal - Hospital Central')
+    telefone = db.Column(db.String(50), nullable=True)
+    email = db.Column(db.String(255), nullable=True)

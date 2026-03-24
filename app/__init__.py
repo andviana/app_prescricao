@@ -27,4 +27,7 @@ def create_app(config_class='config.Config'):
     from app.routes.itens import bp as itens_bp
     app.register_blueprint(itens_bp, url_prefix='/itens')
 
+    from app.routes.configuracoes import bp as configuracoes_bp
+    app.register_blueprint(configuracoes_bp, url_prefix='/configuracoes')
+
     return app
