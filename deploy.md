@@ -75,7 +75,7 @@ Isso garante que, toda vez que você fizer um deploy ou atualização, o banco d
 2.  Clique em **"Add a new web app"**.
 3.  Selecione **Manual Configuration** e escolha o **Python 3.10** (ou a versão desejada).
 4.  No terminal do PythonAnywhere, clone o seu repositório:
-    `git clone https://github.com/seu-usuario/app_prescricao.git`
+    `git clone https://github.com/andviana/app_prescricao.git`
 5.  Crie um ambiente virtual e instale as dependências:
     ```bash
     mkvirtualenv --python=/usr/bin/python3.10 venv_prescricao
